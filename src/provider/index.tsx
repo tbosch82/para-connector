@@ -2,7 +2,7 @@
 
 import "@getpara/react-sdk/styles.css";
 import { QueryProvider } from "./context/QueryProvider";
-import { WagmiProvider } from "./context/WagmiProvider";
+import { ParaProvider } from "./context/ParaProvider";
 
 export function Providers({
   children,
@@ -10,10 +10,8 @@ export function Providers({
   children: React.ReactNode;
 }>) {
   return (
-    <WagmiProvider>
-      <QueryProvider>
-        {children}
-      </QueryProvider>
-    </WagmiProvider>
+    <QueryProvider>
+      <ParaProvider>{children}</ParaProvider>
+    </QueryProvider>
   );
 }
